@@ -1,26 +1,25 @@
-# CLOUD_PROVIDER TYPE Terraform module
+# AWS S3 Backend Terraform module
 
-Terraform module which creates **TYPE** resources on **CLOUD_PROVIDER**. This module is an abstraction of the [MODULE_NAME](https://github.com/a_great_module) by [@someoneverysmart](https://github.com/someoneverysmart).
+Terraform module which creates **terraform backend** resources on **AWS**.
 
 ## User Stories for this module
 
-- AATYPE I can be highly available or single zone
-- ...
+- AAOps I can create a backend for the terraform state
 
 ## Usage
 
 ```hcl
-module "example" {
-  source = "https://github.com/padok-team/terraform-aws-example"
+module "terraform_backend" {
+  source = "https://github.com/padok-team/terraform-aws-terraformbackend"
 
-  example_of_required_variable = "hello_world"
+  bucket_name   = "my-backend-terraform-state"
+  dynamodb_table_name   = "my-backend-terraform-lock"
 }
 ```
 
 ## Examples
 
-- [Example of use case](examples/example_of_use_case/main.tf)
-- [Example of other use case](examples/example_of_other_use_case/main.tf)
+- [Example of terraform backend creation](examples/example_basic/main.tf)
 
 <!-- BEGIN_TF_DOCS -->
 ## Modules
@@ -31,13 +30,12 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_example_of_required_variable"></a> [example\_of\_required\_variable](#input\_example\_of\_required\_variable) | Short description of the variable | `string` | n/a | yes |
-| <a name="input_example_with_validation"></a> [example\_with\_validation](#input\_example\_with\_validation) | Short description of the variable | `list(string)` | n/a | yes |
-| <a name="input_example_of_variable_with_default_value"></a> [example\_of\_variable\_with\_default\_value](#input\_example\_of\_variable\_with\_default\_value) | Short description of the variable | `string` | `"default_value"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the terraform backend to be created | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_example"></a> [example](#output\_example) | A meaningful description |
+| <a name="output_bucket"></a> [bucket](#output\_bucket) | Name of the backend bucket |
+| <a name="output_dynamodb_table"></a> [dynamodb\_table](#output\_dynamodb\_table) | Name of the DynamoDB table |
 <!-- END_TF_DOCS -->
