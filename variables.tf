@@ -6,6 +6,6 @@ variable "bucket_name" {
 
 variable "dynamodb_table_name" {
   type        = string
-  description = "Name of the DynamoDB table to be created for terraform backend"
+  description = "Name of the DynamoDB table to be created for terraform backend which is used as a terraform lock"
   default     = "terraform-state-lock-table"
 }
