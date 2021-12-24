@@ -1,5 +1,4 @@
 # Create a simple terraform s3 backend
-
 terraform {
   required_providers {
     aws = {

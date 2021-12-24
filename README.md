@@ -12,7 +12,7 @@ Terraform module which creates **terraform backend** resources on **AWS**.
 module "terraform_backend" {
   source = "https://github.com/padok-team/terraform-aws-terraformbackend"
 
-  bucket_name   = "my-backend-terraform-state"
+  bucket_name           = "my-backend-terraform-state"
   dynamodb_table_name   = "my-backend-terraform-lock"
 }
 ```
