@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "terraform" {
+resource "aws_s3_bucket" "this" {
   bucket = var.bucket_name
   acl    = "private"
 
@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "terraform" {
   }
 }
 
-resource "aws_dynamodb_table" "terraform" {
+resource "aws_dynamodb_table" "this" {
   name         = var.dynamodb_table_name
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
