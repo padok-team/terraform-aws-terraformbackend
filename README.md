@@ -2,6 +2,8 @@
 
 Terraform module which creates **terraform backend** resources on **AWS**.
 
+This module is used in [terraform-aws-orga](https://github.com/padok-team/terraform-aws-orga).
+
 ## User Stories for this module
 
 - AAOps I can create a backend for the terraform state
@@ -63,4 +65,5 @@ software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
-under the Li
+under the the License.
+```
