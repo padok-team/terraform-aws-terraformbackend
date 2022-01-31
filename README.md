@@ -12,7 +12,7 @@ This module is used in [terraform-aws-orga](https://github.com/padok-team/terraf
 
 ```hcl
 module "terraform_backend" {
-  source = "https://github.com/padok-team/terraform-aws-terraformbackend"
+  source = "github.com/padok-team/terraform-aws-terraformbackend"
 
   bucket_name           = "my-backend-terraform-state"
   dynamodb_table_name   = "my-backend-terraform-lock"
