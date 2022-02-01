@@ -9,3 +9,9 @@ variable "dynamodb_table_name" {
   type        = string
   default     = "terraform-state-lock-table"
 }
+
+variable "encryption" {
+  type = bool
+  description = "Enable or disable encryption"
+  default = true
+}
