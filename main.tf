@@ -5,6 +5,17 @@ resource "aws_s3_bucket" "this" {
   versioning {
     enabled = true
   }
+
+  dynamic "server_side_encryption_configuration" {
+    for_each = var.encryption == true ? [1] : []
+    content {
+      rule {
+        apply_server_side_encryption_by_default {
+          sse_algorithm     = "AES256"
+        }
+      }
+    }
+  }
 }
 
 resource "aws_dynamodb_table" "this" {
