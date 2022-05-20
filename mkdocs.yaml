@@ -1,0 +1,8 @@
+---
+site_name: terraform-aws-terraformbackend
+
+repo_name: padok-team/terraform-aws-terraformbackend
+repo_url: https://github.com/padok-team/terraform-aws-terraformbackend
+
+plugins:
+  - techdocs-core
