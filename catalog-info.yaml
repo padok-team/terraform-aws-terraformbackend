@@ -1,0 +1,17 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-aws-terraformbackend
+  description: Terraform module which creates terraform backend resources on AWS.
+  tags:
+    - "terraform"
+    - "aws"
+  annotations:
+    github.com/project-slug: padok-team/terraform-aws-terraformbackend
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: module
+  system: terraform
+  owner: library-aws
+  lifecycle: experimental
