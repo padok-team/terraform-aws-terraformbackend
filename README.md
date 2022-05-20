@@ -4,6 +4,8 @@ Terraform module which creates **terraform backend** resources on **AWS**.
 
 This module is used in [terraform-aws-orga](https://github.com/padok-team/terraform-aws-orga).
 
+It can be used to [bootstrap a terraform AWS project](./docs/bootstrap.md).
+
 ## User Stories for this module
 
 - AAOps I can create a backend for the terraform state
@@ -24,23 +26,25 @@ module "terraform_backend" {
 - [Example of terraform backend creation](examples/example_basic/main.tf)
 
 <!-- BEGIN_TF_DOCS -->
+
 ## Modules
 
 No modules.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | Name of the bucket to be created for terraform backend | `string` | `"terraform-state-bucket"` | no |
-| <a name="input_dynamodb_table_name"></a> [dynamodb\_table\_name](#input\_dynamodb\_table\_name) | Name of the DynamoDB table to be created for terraform backend which is used as a terraform lock | `string` | `"terraform-state-lock-table"` | no |
+| Name                                                                                       | Description                                                                                      | Type     | Default                        | Required |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------- | ------------------------------ | :------: |
+| <a name="input_bucket_name"></a> [bucket_name](#input_bucket_name)                         | Name of the bucket to be created for terraform backend                                           | `string` | `"terraform-state-bucket"`     |    no    |
+| <a name="input_dynamodb_table_name"></a> [dynamodb_table_name](#input_dynamodb_table_name) | Name of the DynamoDB table to be created for terraform backend which is used as a terraform lock | `string` | `"terraform-state-lock-table"` |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_dynamodb_table_id"></a> [dynamodb\_table\_id](#output\_dynamodb\_table\_id) | Name of the DynamoDB table |
-| <a name="output_s3_bucket_id"></a> [s3\_bucket\_id](#output\_s3\_bucket\_id) | Name of the backend bucket |
+| Name                                                                                   | Description                |
+| -------------------------------------------------------------------------------------- | -------------------------- |
+| <a name="output_dynamodb_table_id"></a> [dynamodb_table_id](#output_dynamodb_table_id) | Name of the DynamoDB table |
+| <a name="output_s3_bucket_id"></a> [s3_bucket_id](#output_s3_bucket_id)                | Name of the backend bucket |
+
 <!-- END_TF_DOCS -->
 
 ## License
