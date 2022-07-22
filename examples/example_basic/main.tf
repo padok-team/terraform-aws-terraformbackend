@@ -3,7 +3,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "3.63.0"
+      version = ">= 4.0.0"
     }
   }
 }
@@ -13,7 +13,5 @@ provider "aws" {
 }
 
 module "terraform_backend" {
-  source              = "../.."
-  bucket_name         = "test-backend-terraform-state"
-  dynamodb_table_name = "test-backend-terraform-lock"
+  source = "../.."
 }

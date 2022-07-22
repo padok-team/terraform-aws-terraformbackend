@@ -1,6 +1,6 @@
 output "s3_bucket_id" {
   description = "Name of the backend bucket"
-  value       = aws_s3_bucket.this.id
+  value       = module.ssm_logging_bucket.id
 }
 
 output "dynamodb_table_id" {
