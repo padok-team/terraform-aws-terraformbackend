@@ -1,22 +1,14 @@
-resource "aws_s3_bucket" "this" {
-  bucket = var.bucket_name
-  acl    = "private"
+resource "random_pet" "bucket_pet" {}
 
-  versioning {
-    enabled = true
-  }
-
-  dynamic "server_side_encryption_configuration" {
-    for_each = var.encryption == true ? [1] : []
-    content {
-      rule {
-        apply_server_side_encryption_by_default {
-          sse_algorithm     = "AES256"
-        }
-      }
-    }
-  }
+locals {
+  bucket_name = var.bucket_name != null ? var.bucket_name : "terraform-state-bucket-${random_pet.bucket_pet.id}"
 }
+
+module "ssm_logging_bucket" {
+  source = "git@github.com:padok-team/terraform-aws-s3?ref=v0.1.0"
+  name   = local.bucket_name
+}
+
 
 resource "aws_dynamodb_table" "this" {
   name         = var.dynamodb_table_name

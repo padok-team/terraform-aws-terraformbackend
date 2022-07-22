@@ -1,7 +1,7 @@
 variable "bucket_name" {
   description = "Name of the bucket to be created for terraform backend"
   type        = string
-  default     = "terraform-state-bucket"
+  default     = null
 }
 
 variable "dynamodb_table_name" {
@@ -11,7 +11,7 @@ variable "dynamodb_table_name" {
 }
 
 variable "encryption" {
-  type = bool
+  type        = bool
   description = "Enable or disable encryption"
-  default = true
+  default     = true
 }
