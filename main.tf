@@ -5,7 +5,7 @@ locals {
 }
 
 module "ssm_logging_bucket" {
-  source = "git@github.com:padok-team/terraform-aws-s3?ref=v0.1.0"
+  source = "git@github.com:padok-team/terraform-aws-s3?ref=v0.2.0"
   name   = local.bucket_name
 }
 
